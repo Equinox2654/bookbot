@@ -3,11 +3,11 @@ import sys
 
 # book bot main
 
-book = sys.argv[1]
-
 if len(sys.argv) != 2:
     print("Usage: python3 main.py <path_to_book>")
     sys.exit(1)
+
+book = sys.argv[1]
 
 def get_book_text(path_to_file):
     with open(path_to_file) as f:
