@@ -1,10 +1,13 @@
 import stats
+import sys
 
 # book bot main
 
-books = {
-    "frankenstein": "books/frankenstein.txt",
-}
+book = sys.argv[1]
+
+if len(sys.argv) != 2:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
 
 def get_book_text(path_to_file):
     with open(path_to_file) as f:
@@ -13,11 +16,11 @@ def get_book_text(path_to_file):
 
 def main():
     print("============ BOOKBOT ============")
-    print(f"Analyzing book found at {books['frankenstein']}")
+    print(f"Analyzing book found at {book}")
     print("----------- Word Count ----------")
-    print(f"Found {stats.get_num_words(books["frankenstein"])} total words")
+    print(f"Found {stats.get_num_words(book)} total words")
     print("--------- Character Count -------")
-    stats.print_sorted_characters(stats.sort_characters(stats.get_num_characters(books["frankenstein"])))
+    stats.print_sorted_characters(stats.sort_characters(stats.get_num_characters(book)))
     print("============= END ===============")
 
 main()
