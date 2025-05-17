@@ -20,3 +20,16 @@ def get_num_characters(path_to_file):
             else:
                 characters[char] = 1
     return characters
+
+# sorts characters dictionary from largest to smallest value
+
+def sort_characters(characters):
+    """Sorts the characters dictionary from largest to smallest value"""
+    sorted_characters = sorted(characters.items(), key=lambda x: x[1], reverse=True)
+    return sorted_characters
+
+# prints sorted characters in a readable format
+def print_sorted_characters(sorted_characters):
+    """Prints sorted characters in a readable format"""
+    for char, count in sorted_characters:
+        print(f"{char}: {count}")
